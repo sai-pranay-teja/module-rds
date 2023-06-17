@@ -56,3 +56,10 @@ resource "aws_db_subnet_group" "rds-subnet" {
     Name = "${var.env} rds subnet group"
   }
 }
+
+resource "aws_ssm_parameter" "rds_endpoint" {
+  name="${var.env}.rds.endpoint"
+  type="String"
+  value=aws_rds_cluster.rds.endpoint
+
+}
