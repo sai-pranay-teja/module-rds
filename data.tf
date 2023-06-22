@@ -3,9 +3,9 @@
 } */
 
 data "aws_ssm_parameter" "user" {
-  name = "dev.rds.user"
+  name = "${var.env}.rds.user"
 }
 
 data "aws_ssm_parameter" "pass" {
-  name = "dev.rds.pass"
+  name = "${var.env}.rds.pass"
 }
